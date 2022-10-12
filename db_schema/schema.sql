@@ -14,21 +14,15 @@ CREATE TABLE USER(
 
 CREATE TABLE WEDDING_BOARD(
   WPin CHAR(12) NOT NULL,
-  WPassword VARCHAR(60) NOT NULL,
   WUsername VARCHAR(40) NOT NULL,
+  WPassword VARCHAR(60),
+  WTitle VARCHAR(20),
   WBackgroundColor CHAR(6),
   WForegroundColor CHAR(6),
   WFontColor CHAR(6),
-  WIsHoneyCombShape BOOL,
+  WIsHoneyCombShape BOOL DEFAULT FALSE,
   PRIMARY KEY (WPin),
   FOREIGN KEY (WUsername) REFERENCES USER(UUsername)
-) ENGINE=Innodb;
-
-CREATE TABLE WEDDING_BOARD_TITLE(
-  WEPin CHAR(12) NOT NULL,
-  WETitle VARCHAR(20) NOT NULL,
-  PRIMARY KEY (WEPin, WETitle),
-  FOREIGN KEY (WEPin) REFERENCES WEDDING_BOARD(WPin)
 ) ENGINE=Innodb;
 
 CREATE TABLE PICTURE(
@@ -38,3 +32,17 @@ CREATE TABLE PICTURE(
   PRIMARY KEY (PFilePath),
   FOREIGN KEY (PPin) REFERENCES WEDDING_BOARD(WPin)
 );
+
+INSERT INTO USER (UUsername, UPassword, UFirstName, ULastName)
+VALUES ('user', 'blah', 'UserF', 'UserL');
+INSERT INTO USER (UUsername, UPassword, UFirstName, ULastName)
+VALUES ('john_smith', 'wow', 'John', 'Smith');
+INSERT INTO USER (UUsername, UPassword, UFirstName, ULastName)
+VALUES ('jane_doe1', 'ok1', 'Jane', 'Doe');
+
+INSERT INTO WEDDING_BOARD(WPin, WPassword, WUsername, WTitle, WBackgroundColor, WForegroundColor, WFontColor, WIsHoneyCombShape)
+VALUES ('123456789101', 'my_pass', 'user', 'my_board', '0f116e', '2bbded', 'ffffff', FALSE);
+INSERT INTO WEDDING_BOARD(WPin, WPassword, WUsername, WTitle, WBackgroundColor, WForegroundColor, WFontColor, WIsHoneyCombShape)
+VALUES ('123456789102', 'my_other_pass', 'user', 'my_second_board', '5d146b', 'caabdb', 'ffffff', TRUE);
+INSERT INTO WEDDING_BOARD(WPin, WPassword, WUsername, WTitle, WBackgroundColor, WForegroundColor, WFontColor, WIsHoneyCombShape)
+VALUES ('123456789103', 'my_pass', 'john_smith', 'board', 'f2b749', 'fffcf7', '000000', FALSE);
