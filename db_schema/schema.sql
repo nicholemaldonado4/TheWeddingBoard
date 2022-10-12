@@ -1,0 +1,40 @@
+-- source WeddingBoard/db_schema/schema.sql
+
+DROP DATABASE IF EXISTS WeddingBoardDB;
+CREATE DATABASE WeddingBoardDB;
+USE WeddingBoardDB;
+
+CREATE TABLE USER(
+  UUsername VARCHAR(40) NOT NULL,
+  UPassword CHAR(60) NOT NULL,
+  UFirstName VARCHAR(60),
+  ULastName VARCHAR(60),
+  PRIMARY KEY (UUsername)
+) ENGINE=Innodb;
+
+CREATE TABLE WEDDING_BOARD(
+  WPin CHAR(12) NOT NULL,
+  WPassword VARCHAR(60) NOT NULL,
+  WUsername VARCHAR(40) NOT NULL,
+  WBackgroundColor CHAR(6),
+  WForegroundColor CHAR(6),
+  WFontColor CHAR(6),
+  WIsHoneyCombShape BOOL,
+  PRIMARY KEY (WPin),
+  FOREIGN KEY (WUsername) REFERENCES USER(UUsername)
+) ENGINE=Innodb;
+
+CREATE TABLE WEDDING_BOARD_TITLE(
+  WEPin CHAR(12) NOT NULL,
+  WETitle VARCHAR(20) NOT NULL,
+  PRIMARY KEY (WEPin, WETitle),
+  FOREIGN KEY (WEPin) REFERENCES WEDDING_BOARD(WPin)
+) ENGINE=Innodb;
+
+CREATE TABLE PICTURE(
+  PFilePath VARCHAR(256) NOT NULL,
+  PPin CHAR(12) NOT NULL,
+  PCaption VARCHAR(300),
+  PRIMARY KEY (PFilePath),
+  FOREIGN KEY (PPin) REFERENCES WEDDING_BOARD(WPin)
+);
