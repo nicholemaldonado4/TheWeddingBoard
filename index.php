@@ -13,4 +13,5 @@
   <link rel="stylesheet" href="css/index.css">
 </head>
 <body>
+  <?php require_once 'php/header.php';?>
 </body>
