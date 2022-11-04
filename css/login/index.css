@@ -1,0 +1,19 @@
+:root {
+  --charcoal: "#454647";
+  --ff-title: "Lobster Two", serif;
+}
+
+h1 {
+  font-family: var(--ff-title);
+  font-weight: 700;
+}
+
+h1 a {
+  text-decoration: none;
+  color: var(--charcoal);
+}
+
+.login-box {
+  
+  
+}
