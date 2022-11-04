@@ -4,7 +4,7 @@ DROP DATABASE IF EXISTS WeddingBoardDB;
 CREATE DATABASE WeddingBoardDB;
 USE WeddingBoardDB;
 
-CREATE TABLE USER(
+CREATE TABLE WBUSER(
   UUsername VARCHAR(40) NOT NULL,
   UPassword CHAR(60) NOT NULL,
   UFirstName VARCHAR(60),
@@ -20,9 +20,9 @@ CREATE TABLE WEDDING_BOARD(
   WBackgroundColor CHAR(6),
   WForegroundColor CHAR(6),
   WFontColor CHAR(6),
-  WIsHoneyCombShape BOOL DEFAULT FALSE,
+  WIsHoneyCombShape BIT DEFAULT 0,
   PRIMARY KEY (WPin),
-  FOREIGN KEY (WUsername) REFERENCES USER(UUsername)
+  FOREIGN KEY (WUsername) REFERENCES WBUSER(UUsername)
 ) ENGINE=Innodb;
 
 CREATE TABLE PICTURE(
@@ -33,11 +33,11 @@ CREATE TABLE PICTURE(
   FOREIGN KEY (PPin) REFERENCES WEDDING_BOARD(WPin)
 );
 
-INSERT INTO USER (UUsername, UPassword, UFirstName, ULastName)
+INSERT INTO WBUSER (UUsername, UPassword, UFirstName, ULastName)
 VALUES ('user', 'blah', 'UserF', 'UserL');
-INSERT INTO USER (UUsername, UPassword, UFirstName, ULastName)
+INSERT INTO WBUSER (UUsername, UPassword, UFirstName, ULastName)
 VALUES ('john_smith', 'wow', 'John', 'Smith');
-INSERT INTO USER (UUsername, UPassword, UFirstName, ULastName)
+INSERT INTO WBUSER (UUsername, UPassword, UFirstName, ULastName)
 VALUES ('jane_doe1', 'ok1', 'Jane', 'Doe');
 
 INSERT INTO WEDDING_BOARD(WPin, WPassword, WUsername, WTitle, WBackgroundColor, WForegroundColor, WFontColor, WIsHoneyCombShape)
