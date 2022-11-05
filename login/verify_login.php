@@ -42,7 +42,6 @@ function verify_login() {
                                    ["username"=>$username, "password"=>$password]));
   header("Location: index.php");
   exit();
-  print_r($_SESSION);
 }
 
 verify_login();
