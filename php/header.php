@@ -6,7 +6,7 @@
   <ul class="right-nav" class="not-logged-in">
     <li><a href="/">Home</a></li>
     <li><a href="">Write a Message</a></li>
-    <li><a href="login">Login In</a></li>
+    <li><a href="login">Log In</a></li>
   </ul>
   
   <ul class="right-nav" class="logged-in">

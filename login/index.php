@@ -1,3 +1,12 @@
+<?php 
+  include_once("../session.php");
+  include_once("login_data.php");
+  $session = new Session();
+  $session->redirectIfLoggedIn("/");
+  $loginData = new LoginData($session->hasFlashData() ? $session->GetFlashData() : NULL);
+  $session->clearFlashData();
+?>
+
 <!DOCTYPE html>
 <head>
   <meta charset="UTF-8">
@@ -12,16 +21,21 @@
   <div><h1><a href="/">Wedding Board</a></h1></div>
   <div class="login-box">
     <h2>Login</h2>
-    <form>
+    <form action="verify_login.php" method="post">
       <div>
       <label for="username">Username</label>
-      <input type="text" name="username">
+      <input type="text" name="username" value="<?=$loginData->getUsername()?>">
       </div>
       <div>
       <label for="password">Password</label>
-      <input type="password">
+      <input type="password" name="password" value="<?=$loginData->getPassword()?>">
       </div>
-      <input type="submit">
+      <?php 
+        if ($loginData->hasError()) {
+          echo "<p>".$loginData->getError()."<p>";
+        }
+      ?>
+      <input type="submit" value="Log In">
     </form>
     <p>Need an account? <a href="/signup">Sign Up</a></p>
   </div>
