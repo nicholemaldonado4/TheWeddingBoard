@@ -14,11 +14,11 @@
   <title>Wedding Board | Log In</title>
   
   <link rel="stylesheet"
-          href="https://fonts.googleapis.com/css?family=Lobster Two">
+          href="https://fonts.googleapis.com/css?family=Lobster Two|Assistant">
   <link href="/css/login/index.css" rel="stylesheet">
 </head>
 <body>
-  <div><h1><a href="/">Wedding Board</a></h1></div>
+  <div class="title-banner"><h1><a href="/">Wedding Board</a></h1></div>
   <div class="login-box">
     <h2>Login</h2>
     <form action="verify_login.php" method="post">
@@ -37,6 +37,6 @@
       ?>
       <input type="submit" value="Log In">
     </form>
-    <p>Need an account? <a href="/signup">Sign Up</a></p>
+    <p>Need an account?&nbsp&nbsp<a href="/signup" class="link">Sign Up</a></p>
   </div>
 </body>

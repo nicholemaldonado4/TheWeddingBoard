@@ -1,11 +1,28 @@
 :root {
-  --charcoal: "#454647";
+  --charcoal: #454647;
+  --light-grey: #d1d4d9;
+  --med-teal: #40aa9c;
+  --light-teal: #53cfbe;
+  --dark-teal: #338f82;
+  
   --ff-title: "Lobster Two", serif;
+  --ff-body: "Assistant", "sans-serif";
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+* {
+  box-sizing: border-box;
 }
 
 h1 {
   font-family: var(--ff-title);
   font-weight: 700;
+  text-align: center;
+  font-size: 2.1rem;
 }
 
 h1 a {
@@ -13,7 +30,83 @@ h1 a {
   color: var(--charcoal);
 }
 
+h2 {
+  font-family: var(--ff-body);
+  margin-bottom: 1.5rem;
+  margin-top: 0rem;
+  color: var(--charcoal);
+  font-weight: 800;
+}
+
 .login-box {
-  
+  width: 400px;
+  margin: 0 auto;
+  border-color: var(--light-grey); 
+  border-style: solid;
+  padding: 30px 25px;
+  border-radius: 15px;
+  border-width: thin;
+}
+
+label {
+  display: block;
+  font-size: 1rem;
+  font-family: var(--ff-body);
+  margin-bottom: 0.5rem;
+}
+
+p {
+  font-family: var(--ff-body);
+  text-align: center;
+  margin-top: 1rem;
+  margin-bottom: 0;
+}
+
+input[type="text"],
+input[type="password"] {
+  font-size:1rem;
+  font-family: var(--ff-body);
+  border-radius: 5px;
+  border-color: var(--light-grey);
+  border-width: thin;
+  border-style: solid;
+  padding: 5px;
+  width: 100%;
+  margin-bottom: 1rem;
+}
+
+input[type="submit"] {
+  font-size: 1rem;
+  font-family: var(--ff-body);
+  border-radius: 10px;
+  border-style: none;
+  width: 100%;
+  margin-top: 1rem;
+  padding: 0.5rem 0px;
+  background-color: var(--light-teal);
+  color: white;
+  font-weight: 700;
+}
+
+input[type="submit"]:hover {
+  background-color: var(--med-teal);
+}
+
+.title-banner {
+  margin-top: 4rem;
+  margin-bottom: 2rem;
+}
+
+.link {
+  text-decoration: none;
+  color: var(--dark-teal);
+  font-weight: 600;
+}
+
+@media all and (max-width: 400px) {
+  .login-box {
+    width: 100vw;
+    border-style: none;
+  } 
   
 }
