@@ -21,9 +21,9 @@ function getSignUpFlashData($msg, $firstName, $lastName, $username, $password) {
                              "password"=>$password]);
 }
 
-function validFirstName($firstName) {
-  if (!preg_match('/^[A-Za-z]{1,60}$/', $firstName)) {
-    return "Invalid first name. A first name must have between 1 to 60 letters only.";
+function validName($name, $min_len, $name_type) {
+  if (!preg_match('/^[A-Za-z]{'.$min_len.',60}$/', $name)) {
+    return "Invalid $name_type name. A $name_type name must have between $min_len to 60 letters only.";
   }
   return TRUE;
 }
@@ -72,9 +72,10 @@ function verifySignUp() {
     exit();
   }
   
-  if (($msg = validFirstName($firstName)) !== TRUE ||
+  if (($msg = validName($firstName, 1, "first")) !== TRUE ||
       ($msg = validUsername($username)) !== TRUE ||
-      ($msg = validPassword($password)) !== TRUE) {
+      ($msg = validPassword($password)) !== TRUE ||
+      (!empty($lastName) && ($msg = validName($lastName, 0, "last")) !== TRUE)) {
     $session->setFlashData(getSignUpFlashData($msg, $firstName, $lastName,
                                               $username, $password));
     header("Location: index.php");
