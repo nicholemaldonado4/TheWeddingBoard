@@ -24,7 +24,7 @@
     <form action="verify_signup.php" method="post">
       <div>
         <label for="first_name">First Name</label>
-        <input type="text" name="first_name" value="<?=$signUpData->getFirstName()?>">
+        <input type="text" name="first_name" value="<?=$signUpData->getFirstName()?>" required>
       </div>
       <div>
         <label for="last_name">Last Name</label>
@@ -32,11 +32,11 @@
       </div>
       <div>
         <label for="username">Username</label>
-        <input type="text" name="username" value="<?=$signUpData->getUsername()?>">
+        <input type="text" name="username" value="<?=$signUpData->getUsername()?>" required>
       </div>
       <div>
         <label for="password">Password</label>
-        <input type="password" name="password" value="<?=$signUpData->getPassword()?>">
+        <input type="password" name="password" value="<?=$signUpData->getPassword()?>" required>
       </div>
       <?php 
         if ($signUpData->hasError()) {

@@ -5,7 +5,7 @@ CREATE DATABASE WeddingBoardDB;
 USE WeddingBoardDB;
 
 CREATE TABLE WBUSER(
-  UUsername VARCHAR(40) NOT NULL,
+  UUsername VARCHAR(32) NOT NULL,
   UPassword CHAR(60) NOT NULL,
   UFirstName VARCHAR(60),
   ULastName VARCHAR(60),
