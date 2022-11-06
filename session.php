@@ -35,6 +35,10 @@ class Session {
       unset($_SESSION["flash_data"]);
     }
   }
+  
+  function destroy() {
+    session_destroy();
+  }
 }
 
 class FlashData {
