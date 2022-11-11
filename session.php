@@ -5,12 +5,23 @@ class Session {
     session_start();
   }
   
+  function isLoggedIn() {
+    return array_key_exists("username", $_SESSION) &&
+        !empty($_SESSION['username']);
+  }
+  
   function redirectIfLoggedIn($redirectPath) {
-    if (array_key_exists("username", $_SESSION) &&
-        !empty($_SESSION['username'])) {
+    if ($this->isLoggedIn()) {
       header("Location: ".$redirectPath);
       exit();
     }
+  }
+  
+  function getUsername() {
+    if ($this->isLoggedIn()) {
+      return $_SESSION["username"];
+    }
+    return "";
   }
   
   function markLogIn($username) {

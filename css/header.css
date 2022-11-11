@@ -1,0 +1,75 @@
+:root {
+  --charcoal: #454647;
+  --light-grey: #d1d4d9;
+  --med-teal: #40aa9c;
+  --light-teal: #53cfbe;
+  --dark-teal: #338f82;
+  
+  --med-aqua: #5fc8cc;
+  
+  --ff-title: "Lobster Two", serif;
+  --ff-body: "Assistant", "sans-serif";
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.logo-name {
+  color: var(--charcoal);
+  font-size: 1.6rem;
+  font-family: var(--ff-title);
+  font-weight: bold;
+}
+
+nav a {
+  text-decoration: none;
+}
+
+nav {
+  padding: 10px;
+  border-bottom-color: var(--med-aqua);
+  border-bottom-style: solid;
+  border-bottom-width: 5px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.right-nav {
+  display: flex;
+  align-items: center;
+}
+
+.right-nav li {
+  display: inline-block;
+  margin-right: 16px;
+  padding: 0px 10px;
+  height: 100%;
+}
+
+.right-nav a {
+  font-size: 1.1rem;
+  color: black;
+  font-family: var(--ff-body);
+  font-weight: lighter;
+}
+
+.right-nav a:hover {
+  color: var(--charcoal);
+  border-bottom: 2px solid var(--med-aqua);
+}
+
+/*
+li.logout a {
+  color: white;
+}
+
+li.logout{
+  background-color: var(--med-aqua);
+  color: white;
+  padding: 5px 20px;
+  border-radius: 20px;
+}
+*/
