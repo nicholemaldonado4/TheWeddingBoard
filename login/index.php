@@ -19,7 +19,7 @@
 </head>
 <body>
   <div class="title-banner"><h1><a href="/">Wedding Board</a></h1></div>
-  <div class="login-box">
+  <div class="form-box">
     <h2>Login</h2>
     <form action="verify_login.php" method="post">
       <div>

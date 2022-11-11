@@ -14,12 +14,12 @@
   <title>Wedding Board | Sign Up</title>
   
   <link rel="stylesheet"
-          href="https://fonts.googleapis.com/css?family=Lobster Two">
+          href="https://fonts.googleapis.com/css?family=Lobster Two|Assistant">
   <link href="/css/login/index.css" rel="stylesheet">
 </head>
 <body>
-  <div><h1><a href="/">Wedding Board</a></h1></div>
-  <div class="signup-box">
+  <div class="title-banner"><h1><a href="/">Wedding Board</a></h1></div>
+  <div class="form-box">
     <h2>Sign Up</h2>
     <form action="verify_signup.php" method="post">
       <div>
@@ -45,6 +45,6 @@
       ?>
       <input type="submit" value="Sign Up">
     </form>
-    <p>Already have an account? <a href="/login">Log In</a></p>
+    <p>Already have an account?&nbsp&nbsp<a href="/login" class="link">Log In</a></p>
   </div>
 </body>

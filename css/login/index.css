@@ -38,7 +38,7 @@ h2 {
   font-weight: 800;
 }
 
-.login-box {
+.form-box {
   width: 400px;
   margin: 0 auto;
   border-color: var(--light-grey); 
@@ -104,7 +104,7 @@ input[type="submit"]:hover {
 }
 
 @media all and (max-width: 400px) {
-  .login-box {
+  .form-box {
     width: 100vw;
     border-style: none;
   } 
