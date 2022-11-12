@@ -5,8 +5,7 @@
   <ul class="left-nav">
     <li><a class="logo-name" href="/">Wedding Board</a></li>
   </ul>
-  
-<!--  <img class="toggle" src="/imgs/menu_bars.svg" alt="Drop Down Menu Bars">-->
+  <img class="toggle" src="/imgs/menu_bars.svg" alt="Drop Down Menu Bars">
   
   <?php
     if ($loggedIn) {
