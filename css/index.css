@@ -1,0 +1,110 @@
+:root {
+  --charcoal: #454647;
+
+  --med-teal: #40aa9c;
+  --light-teal: #53cfbe;
+  --dark-teal: #338f82;
+  
+  --light-aqua: #67d7db;
+  --med-aqua: #5fc8cc;
+  --deep-aqua: #12c6c1;
+  --dark-aqua: #015d67;
+  
+  --light-grey: #ebebeb;
+  
+  --ff-title: "Lobster Two", serif;
+  --ff-body: "Assistant", "sans-serif";
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.banner {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  background-color: var(--light-grey);
+  gap: 70px;
+}
+
+.sect-header {
+  font-size: 1.4rem;
+  font-family: var(--ff-body);
+  font-weight: bolder;
+  margin-bottom: 1rem;
+}
+
+.collage {
+  width: auto;
+  max-width: 40%;
+  max-height: 400px;
+  height: 40%;
+  margin: 2rem 0px;
+}
+
+.banner p {
+  font-size: min(4vw, 4rem);
+  color: black;
+  font-family: var(--ff-body);
+  font-weight: bold;
+  align-self: center;
+}
+
+.blue-em {
+  color: var(--deep-aqua);
+  font-style: normal;
+}
+
+.about {
+  display: flex;
+  flex-direction: row;
+  width: 75vw;
+  margin: 2rem auto;
+}
+
+.about p {
+  font-size: 1.1rem;
+  color: black;
+  font-family: var(--ff-body);
+}
+
+.about h2 {
+  color: black;
+}
+
+.steps {
+  background-color: var(--dark-aqua);
+  padding: 2rem 0;
+}
+
+.steps h2 {
+  color: white;
+  text-align: center;
+}
+
+@media all and (max-width: 700px) {
+  .banner {
+    flex-direction: column-reverse;
+    gap: 2rem;
+    padding: 2rem 0px;
+  }
+  
+  .hide {
+    display: none;
+  }
+  
+  .collage {
+    max-width: none;
+    width: 80%;
+    max-height: none;
+    height: auto;
+    align-self: center;
+    margin: 0px;
+  }
+  
+  .banner p {
+    font-size: 1.6rem;
+  }
+}
