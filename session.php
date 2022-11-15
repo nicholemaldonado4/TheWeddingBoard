@@ -17,6 +17,13 @@ class Session {
     }
   }
   
+  function redirectIfNotLoggedIn($redirectPath) {
+    if (!$this->isLoggedIn()) {
+      header("Location: ".$redirectPath);
+      exit();
+    }
+  }
+  
   function getUsername() {
     if ($this->isLoggedIn()) {
       return $_SESSION["username"];
