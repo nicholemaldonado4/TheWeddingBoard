@@ -18,9 +18,28 @@
           href="https://fonts.googleapis.com/css?family=Lobster Two|Assistant">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
   <link rel="stylesheet" href="../css/header.css">
+  <link rel="stylesheet" href="../css/my_boards/index.css">
 </head>
 <body>
   <?php require_once '../php/header.php';?>
+  <section class="my-board-header">
+    <h2>My Boards</h2>
+  </section>
+  <section class="my-board-sect">
+    <table>
+    <thead>
+      <tr>
+        <th scope="col">Board</th>
+        <th scope="col">Pin</th>
+        <th scope="col">Password</th>
+        <th scope="col">Edit</th>
+        <th scope="col">Delete</th>
+      <tr>
+    </thead>
+    <tbody>
+    </tbody>
+    </table>
+  </section>
   
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
   <script src="../js/header.js"></script>
