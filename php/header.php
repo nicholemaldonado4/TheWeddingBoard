@@ -11,7 +11,7 @@
     if ($loggedIn) {
   ?>
   <ul class="right-nav<?=$loggedIn ? "" : " hidden"?>">
-    <li><a href="">My Boards</a></li>
+    <li><a href="/my_boards">My Boards</a></li>
     <li class="logout"><a href="/logout" >Log Out</a></li>
   </ul>
   <?php

@@ -42,6 +42,7 @@ nav {
   align-items: center;
   position: relative;
   flex-direction: row;
+  background-color: white;
 }
 
 .right-nav {
