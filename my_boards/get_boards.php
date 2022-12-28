@@ -21,9 +21,13 @@ function get_boards($session) {
     exit();
   }
   $stmt->bind_result($title, $pin, $password);
+  $spacing = "&nbsp&nbsp&nbsp";
   while ($stmt->fetch()) {
     echo "<tr>";
-    echo "<td>$title</td><td>$pin</td><td>$password</td>";
+    echo "<td scope='row' data-label='Board'>$title</td>";
+    echo "<td scope='row' data-label='Pin'>$pin</td>";
+    echo "<td scope='row' data-label='Password'>$password</td>";
+    echo "<td scope='row' data-label='Actions'>Edit $spacing Delete</td>";
     echo "</tr>";
   }        
 }

@@ -33,8 +33,11 @@
         <th scope="col">Board</th>
         <th scope="col">Pin</th>
         <th scope="col">Password</th>
+<!--
         <th scope="col">Edit</th>
         <th scope="col">Delete</th>
+-->
+        <th scope="col">Actions</th>
       <tr>
     </thead>
     <tbody>
