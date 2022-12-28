@@ -1,4 +1,5 @@
 <?php 
+  include_once("get_boards.php");
   include_once("../session.php");
   $session = new Session();
   $session->redirectIfNotLoggedIn("../");
@@ -37,8 +38,17 @@
       <tr>
     </thead>
     <tbody>
+      <?php
+        get_boards($session);
+      ?>
     </tbody>
     </table>
+    <?php
+      if ($session->hasFlashData()) {
+        echo "<p>".$session->getFlashData()->getMsg()."</p>";
+        $session->clearFlashData();
+      }
+    ?>
   </section>
   
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
