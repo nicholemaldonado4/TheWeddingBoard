@@ -33,10 +33,6 @@
         <th scope="col">Board</th>
         <th scope="col">Pin</th>
         <th scope="col">Password</th>
-<!--
-        <th scope="col">Edit</th>
-        <th scope="col">Delete</th>
--->
         <th scope="col">Actions</th>
       <tr>
     </thead>
@@ -46,6 +42,9 @@
       ?>
     </tbody>
     </table>
+    <div>
+      <p><a href="customize?op=create">+ Create a board</a></p>
+    </div>
     <?php
       if ($session->hasFlashData()) {
         echo "<p>".$session->getFlashData()->getMsg()."</p>";
