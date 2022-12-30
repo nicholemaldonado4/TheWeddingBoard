@@ -54,36 +54,40 @@ body {
   min-height: 300px;
   border-radius: 10px;
   padding-top: 1rem;
-  padding-bottom: 1rem;
+  padding-bottom: 2rem;
   padding-left: 3rem; /* 3rem because 2rem for padding-left and 1rem for left border */
   padding-right: 2rem;
 }
 
-.my-board-sect table {
+table {
   table-layout: auto; /** fixed **/
   width: 100%;
   border-collapse: separate;
   border-spacing: 0px 1rem;
 }
 
-thead tr th:first-child {
+thead th:first-child {
   padding-left: 10px;
 }
 
-tbody tr td:first-child {
-  padding-left: 10px;
+tbody td:first-child {
   box-shadow: -1rem 0px 0 0px var(--dark-aqua); /* left border */
 }
 
-tbody tr td:last-child {
+tr, td {
+  word-break: break-all;
+}
+
+td:last-child {
   border-right-style: solid;
   border-right-color: var(--light-grey);
   border-right-width: 2px;
   border-top-right-radius: 10px;
   border-bottom-right-radius: 10px;
+  word-break: break-word;
 }
 
-tbody td {
+td {
   padding: 0.5rem 10px;
   font-size: 1.1rem;
   color: black;
@@ -132,7 +136,7 @@ td a:hover {
 @media all and (max-width: 700px) {
 	
   /* Hide table headers, keeping in mind of accessibility */
-  thead tr { 
+  thead { 
     position: absolute;
     top: -9999px;
     left: -9999px;
@@ -141,7 +145,6 @@ td a:hover {
   td {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    word-wrap: break-word;
   }
   
   td::before {
@@ -157,5 +160,40 @@ td a:hover {
     display: block;
     padding-bottom: 1rem;
   }
+  
+  td {
+    box-shadow: -1rem 0px 0 0px var(--dark-aqua); /* left border */
+    border-bottom-style: none;
+    border-top-style: none;
+    border-right-style: solid;
+    border-right-color: var(--light-grey);
+    border-right-width: 2px;
+  }
+  
+  tbody td:first-child {
+    border-top-style: solid;
+    border-top-color: var(--light-grey);
+    border-top-width: 2px;
+    border-top-right-radius: 10px;
+  }
+  
+  td:last-child {
+    border-bottom-style: solid;
+    border-bottom-color: var(--light-grey);
+    border-bottom-width: 2px;
+    border-bottom-right-radius: 10px;
+    border-top-right-radius: 0px;
+  }
+  
+  td a {
+    display: inline;
+  }
+  
+  table {
+    border-spacing: 0px;
+  }
 	
+  .my-board-sect {
+    padding-top: 2rem;
+  }
 }
