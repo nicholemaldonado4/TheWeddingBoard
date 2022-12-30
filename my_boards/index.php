@@ -52,7 +52,10 @@
       }
     ?>
   </section>
-  
+  <section class="info-sect">
+    <p>To add a message to the board, have guests visit: www.wedding_board.com/write_msg. Use the board's pin and password to login.</p>
+  </section>
+
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
   <script src="../js/header.js"></script>
 </body>
