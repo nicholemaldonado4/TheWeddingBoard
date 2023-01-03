@@ -19,7 +19,7 @@
     else {
   ?>
   <ul class="right-nav">
-    <li><a href="">Write a Message</a></li>
+    <li><a href="write_msg">Write a Message</a></li>
     <li><a href="login">Log In</a></li>
   </ul>
   <?php } ?>
