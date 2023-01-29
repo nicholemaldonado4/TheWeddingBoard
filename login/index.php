@@ -16,6 +16,7 @@
   <link rel="stylesheet"
           href="https://fonts.googleapis.com/css?family=Lobster Two|Assistant">
   <link href="/css/login/index.css" rel="stylesheet">
+  <link href="/css/login/form.css" rel="stylesheet">
 </head>
 <body>
   <div class="title-banner"><h1><a href="/">Wedding Board</a></h1></div>
