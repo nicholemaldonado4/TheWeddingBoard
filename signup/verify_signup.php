@@ -58,7 +58,7 @@ function verifySignUp() {
   $username = array_key_exists("username", $_POST) ? $_POST["username"] : "";
   $password = array_key_exists("password", $_POST) ? $_POST["password"] : "";
   
-  $session = new Session();
+  $session = new BoardMakerSession();
   
   if (!array_key_exists("first_name", $_POST) || 
       empty($_POST["first_name"]) ||

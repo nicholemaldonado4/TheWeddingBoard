@@ -3,7 +3,7 @@
 
 include_once("../database.php");
 include_once("../session.php");
-$session = new Session();
+$session = new BoardMakerSession();
 $session->redirectIfNotLoggedIn("../");
 
 function delete_board($session) {

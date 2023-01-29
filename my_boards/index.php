@@ -1,7 +1,7 @@
 <?php 
   include_once("get_boards.php");
   include_once("../session.php");
-  $session = new Session();
+  $session = new BoardMakerSession();
   $session->redirectIfNotLoggedIn("../");
   $loggedIn = True;
   define('_HEADER_ACCESS', 1);

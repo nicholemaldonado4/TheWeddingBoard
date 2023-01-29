@@ -1,14 +1,12 @@
 <?php
 
-class Session {
+abstract class Session {
   function __construct() {
     session_start();
   }
   
-  function isLoggedIn() {
-    return array_key_exists("username", $_SESSION) &&
-        !empty($_SESSION['username']);
-  }
+  abstract function isLoggedIn();
+  abstract function markLogIn($id);
   
   function redirectIfLoggedIn($redirectPath) {
     if ($this->isLoggedIn()) {
@@ -22,17 +20,6 @@ class Session {
       header("Location: ".$redirectPath);
       exit();
     }
-  }
-  
-  function getUsername() {
-    if ($this->isLoggedIn()) {
-      return $_SESSION["username"];
-    }
-    return "";
-  }
-  
-  function markLogIn($username) {
-    $_SESSION['username'] = $username;
   }
   
   function setFlashData($flashData) {
@@ -56,6 +43,35 @@ class Session {
   
   function destroy() {
     session_destroy();
+  }
+}
+
+class BoardWriterSession extends Session {
+  function isLoggedIn() {
+    return array_key_exists("board_pin", $_SESSION) &&
+        !empty($_SESSION['board_pin']);
+  }
+  
+  function markLogIn($id) {
+    $_SESSION['board_pin'] = $id;
+  }
+}
+
+class BoardMakerSession extends Session {
+  function isLoggedIn() {
+    return array_key_exists("username", $_SESSION) &&
+        !empty($_SESSION['username']);
+  }
+  
+  function getUsername() {
+    if ($this->isLoggedIn()) {
+      return $_SESSION["username"];
+    }
+    return "";
+  }
+  
+  function markLogIn($id) {
+    $_SESSION['username'] = $username;
   }
 }
 

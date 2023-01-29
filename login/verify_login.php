@@ -12,7 +12,7 @@ function verify_login() {
   $username = array_key_exists("username", $_POST) ? $_POST["username"] : "";
   $password = array_key_exists("password", $_POST) ? $_POST["password"] : "";
   
-  $session = new Session();
+  $session = new BoardMakerSession();
   $db = new Database();
   $err  = $db->connect();
   if (!empty($err)) {

@@ -1,6 +1,6 @@
 <?php 
   include_once("session.php");
-  $session = new Session();
+  $session = new BoardMakerSession();
   $loggedIn = $session->isLoggedIn();
   define('_HEADER_ACCESS', 1);
 ?>

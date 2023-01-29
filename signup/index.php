@@ -1,7 +1,7 @@
 <?php 
   include_once("../session.php");
   include_once("signup_data.php");
-  $session = new Session();
+  $session = new BoardMakerSession();
   $session->redirectIfLoggedIn("/");
   $signUpData = new SignUpData($session->hasFlashData() ? $session->GetFlashData() : NULL);
   $session->clearFlashData();
