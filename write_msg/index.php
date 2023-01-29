@@ -2,7 +2,7 @@
   include_once("../session.php");
   include_once("../php/board_login_data.php");
   $session = new BoardWriterSession();
-  $session->redirectIfLoggedIn("write.php");
+//  $session->redirectIfLoggedIn("write.php");
   $boardLoginData = new BoardLoginData($session->hasFlashData() ? $session->GetFlashData() : NULL);
   $session->clearFlashData();
 ?>
@@ -18,13 +18,14 @@
   <link rel="stylesheet"
           href="https://fonts.googleapis.com/css?family=Lobster Two|Assistant">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
-<!--  <link rel="stylesheet" href="../css/my_boards/index.css">-->
+  <link rel="stylesheet" href="../css/write_msg/index.css">
+  <link rel="stylesheet" href="../css/login/form.css">
 </head>
 <body>
-  <section class="logo-sect">
+  <section class="title-banner">
     <h1>Wedding Board</h1>
   </section>
-  <section class="board-login-sect">
+  <div class="form-box">
     <form action="verify_board_login.php" method="post">
       <div>
         <label for="board_pin">Board Pin</label>
@@ -41,7 +42,7 @@
       ?>
       <input type="submit" value="Write a Message">
     </form>
-  </section>
+  </div>
   <section class="info-sect">
     <p>Create your own board for FREE at <a href="../" class="link">Wedding Board</a></p>
   </section>

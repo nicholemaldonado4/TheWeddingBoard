@@ -1,0 +1,29 @@
+:root {
+  --charcoal: #454647;
+  --light-grey: #d1d4d9;
+  --med-teal: #40aa9c;
+  --light-teal: #53cfbe;
+  --dark-teal: #338f82;
+  
+  --ff-title: "Lobster Two", serif;
+  --ff-body: "Assistant", "sans-serif";
+}
+
+body {
+  background-color: var(--charcoal);
+}
+
+
+h1 {
+  color: white;
+}
+
+
+.form-box {
+  background-color: white;
+  border-radius: 15px;
+}
+
+p {
+  color: white;
+}
