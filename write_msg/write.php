@@ -22,4 +22,17 @@
       <button type="submit">Log Out</button>
     </form>
   </nav>
+  <section>
+    <form>
+      <div>
+        <label for="board_msg">Write a Message</label>
+        <textarea name="board_msg"></textarea>
+      </div>
+      <div>
+        <label for="board_img">Add an Image</label>
+        <input type="file" accept="image/png, image/jped" name="board_img">
+      </div>
+      <input type="submit" value="Write to Board">
+    </form>
+  </section>
 </body>
