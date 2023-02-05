@@ -12,17 +12,17 @@
   
   <link rel="stylesheet"
           href="https://fonts.googleapis.com/css?family=Lobster Two|Assistant">
-<!--  <link href="/css/login/index.css" rel="stylesheet">-->
+  <link href="/css/write_msg/write.css" rel="stylesheet">
   
 </head>
 <body>
   <nav>
     <h1>Wedding Board</h1>
-    <form method="get" action="logout.php">
-      <button type="submit">Log Out</button>
-    </form>
+    <div class='nav_link'>
+      <a href="logout.php" >Log Out</a>
+    </div>
   </nav>
-  <section>
+  <section class="msg-sect">
     <form>
       <div>
         <label for="board_msg">Write a Message</label>
