@@ -2,7 +2,7 @@
   include_once("../session.php");
   include_once("../php/board_login_data.php");
   $session = new BoardWriterSession();
-//  $session->redirectIfLoggedIn("write.php");
+  $session->redirectIfLoggedIn("write.php");
   $boardLoginData = new BoardLoginData($session->hasFlashData() ? $session->GetFlashData() : NULL);
   $session->clearFlashData();
 ?>
@@ -37,7 +37,7 @@
       </div>
       <?php 
         if ($boardLoginData->hasError()) {
-          echo "<p>".$boardLoginData->getError()."</p>";
+          echo "<p class='err_msg'>".$boardLoginData->getError()."</p>";
         }
       ?>
       <input type="submit" value="Write a Message">

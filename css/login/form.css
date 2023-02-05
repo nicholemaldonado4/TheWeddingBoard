@@ -92,6 +92,10 @@ input[type="submit"]:hover {
   font-weight: 600;
 }
 
+.err_msg {
+  color: red;
+}
+
 @media all and (max-width: 400px) {
   .form-box {
     width: 100vw;

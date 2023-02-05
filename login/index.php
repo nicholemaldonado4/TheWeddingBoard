@@ -33,7 +33,7 @@
       </div>
       <?php 
         if ($loginData->hasError()) {
-          echo "<p>".$loginData->getError()."<p>";
+          echo "<p class='err_msg'>".$loginData->getError()."<p>";
         }
       ?>
       <input type="submit" value="Log In">
