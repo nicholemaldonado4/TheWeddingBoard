@@ -71,7 +71,7 @@ class BoardMakerSession extends Session {
   }
   
   function markLogIn($id) {
-    $_SESSION['username'] = $username;
+    $_SESSION['username'] = $id;
   }
 }
 
