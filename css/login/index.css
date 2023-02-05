@@ -24,3 +24,7 @@ h2 {
   border-radius: 15px;
   border-width: thin;
 }
+
+.link {
+  color: var(--dark-teal);
+}

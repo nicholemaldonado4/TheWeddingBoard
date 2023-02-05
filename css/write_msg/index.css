@@ -25,3 +25,7 @@ h1 {
 p {
   color: white;
 }
+
+.link {
+  color: var(--light-teal);
+}

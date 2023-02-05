@@ -89,7 +89,6 @@ input[type="submit"]:hover {
 
 .link {
   text-decoration: none;
-  color: var(--dark-teal);
   font-weight: 600;
 }
 
