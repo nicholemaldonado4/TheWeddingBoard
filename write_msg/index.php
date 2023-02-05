@@ -33,7 +33,7 @@
       </div>
       <div>
         <label for="board_password">Board Password</label>
-        <input type="text" name="board_password" value="<?=$boardLoginData->getBoardPassword()?>">
+        <input type="password" name="board_password" value="<?=$boardLoginData->getBoardPassword()?>">
       </div>
       <?php 
         if ($boardLoginData->hasError()) {
