@@ -55,6 +55,12 @@ class BoardWriterSession extends Session {
   function markLogIn($id) {
     $_SESSION['board_pin'] = $id;
   }
+  
+  function destroy() {
+    if ($this->isLoggedIn()) {
+      unset($_SESSION["board_pin"]);
+    }
+  }
 }
 
 class BoardMakerSession extends Session {
@@ -72,6 +78,12 @@ class BoardMakerSession extends Session {
   
   function markLogIn($id) {
     $_SESSION['username'] = $id;
+  }
+  
+  function destroy() {
+    if ($this->isLoggedIn()) {
+      unset($_SESSION["username"]);
+    }
   }
 }
 
