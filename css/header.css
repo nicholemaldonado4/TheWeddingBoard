@@ -18,7 +18,6 @@
   
   margin-block-start: 0;
   margin-block-end: 0;
-
 }
 
 .logo-name {
@@ -101,9 +100,6 @@ nav {
     display: block;
     margin: 0px;
     text-align: center;
-    border-top-style: solid;
-    border-color: white;
-    border-width: 1px;
   }
   
   .right-nav li:hover {

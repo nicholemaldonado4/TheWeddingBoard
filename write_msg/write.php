@@ -13,14 +13,19 @@
   <link rel="stylesheet"
           href="https://fonts.googleapis.com/css?family=Lobster Two|Assistant">
   <link href="/css/write_msg/write.css" rel="stylesheet">
+  <link href="/css/header.css" rel="stylesheet">
   
 </head>
 <body>
   <nav>
-    <h1>Wedding Board</h1>
-    <div class='nav_link'>
-      <a href="logout.php" >Log Out</a>
-    </div>
+    <ul class="left-nav">
+      <h1 class="logo-name">Wedding Board</h1>
+    </ul>
+    
+    <img class="toggle" src="../imgs/menu_bars.svg" alt="Drop Down Menu Bars">
+    <ul class="right-nav">
+      <li><a href="logout.php">Log Out</a></li>
+    </ul>
   </nav>
   <section class="msg-sect">
     <form>
@@ -35,4 +40,6 @@
       <input type="submit" value="Write to Board">
     </form>
   </section>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+  <script src="/js/header.js"></script>
 </body>
