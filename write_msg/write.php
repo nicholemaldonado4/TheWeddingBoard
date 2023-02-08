@@ -32,6 +32,7 @@
       <div>
         <label for="board_msg">Write a Message</label>
         <textarea name="board_msg"></textarea>
+        <p>Char Left: <span id='char-left'>200</span></p>
       </div>
       <div>
         <label for="board_img">Add an Image</label>
@@ -42,4 +43,5 @@
   </section>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
   <script src="/js/header.js"></script>
+  <script src="/js/write_msg/write.js"></script>
 </body>
