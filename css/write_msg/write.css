@@ -1,5 +1,6 @@
 :root {
   --charcoal: #454647;
+  --light-charcoal: #5b5c5e;
   --light-grey: #d1d4d9;
   --med-teal: #40aa9c;
   --light-teal: #53cfbe;
@@ -34,7 +35,7 @@ body {
   padding: 2rem;
 }
 
-.msg-sect label {
+.msg-sect h2 {
   font-size: 1.1rem;
   font-family: var(--ff-body);
   font-weight: bold;
@@ -65,6 +66,67 @@ textarea {
 
 .msg-div {
   margin-bottom: 1rem;
+}
+
+input[type="file"] {
+  opacity: 0;
+  position: absolute;
+  z-index: -1;
+}
+
+.hidden {
+  display: none;
+}
+
+.previewer {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  border: dashed;
+  border-color: var(--light-grey);
+  border-width: 3px;
+  padding: 1rem 0px;
+  border-radius: 5px;
+}
+
+.input-btn {
+  background-color: var(--light-charcoal);
+  color: white;
+  font-size: 1rem;
+  font-family: var(--ff-body);
+  border-radius: 15px;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  display: inline-block;
+  float: center;
+  margin-top: 1rem;
+}
+
+.input-btn:hover {
+  background-color: var(--charcoal);
+}
+
+.fa-image {
+  color: var(--light-charcoal);
+  font-size: 5rem;
+}
+
+input[type="submit"] {
+  color: white;
+  background-color: var(--med-aqua);
+  border-style: None;
+  font-size: 1.1rem;
+  font-family: var(--ff-body);
+  border-radius: 15px;
+  width: 100%;
+  padding: 10px 0px;
+  margin-top: 2rem;
+  cursor: pointer;
+}
+
+input[type="submit"]:hover {
+  background-color: var(--light-aqua);
 }
 
 @media all and (max-width: 900px) {
