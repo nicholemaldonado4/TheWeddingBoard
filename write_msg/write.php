@@ -29,10 +29,10 @@
   </nav>
   <section class="msg-sect">
     <form>
-      <div>
+      <div class="msg-div">
         <label for="board_msg">Write a Message</label>
         <textarea name="board_msg"></textarea>
-        <p>Char Left: <span id='char-left'>200</span></p>
+        <p class="light-font">Char Left: <span id='char-left'>200</span></p>
       </div>
       <div>
         <label for="board_img">Add an Image</label>

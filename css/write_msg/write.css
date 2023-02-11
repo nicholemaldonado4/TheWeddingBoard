@@ -56,6 +56,17 @@ textarea {
   height: 150px;
 }
 
+.light-font {
+  font-size: 1rem;
+  font-family: var(--ff-body);
+  color: #46a7ab;
+  text-align: right;
+}
+
+.msg-div {
+  margin-bottom: 1rem;
+}
+
 @media all and (max-width: 900px) {
 
 }
