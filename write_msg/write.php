@@ -36,13 +36,13 @@
         <p class="light-font">Char Left: <span id='char-left'>200</span></p>
       </div>
       <div>
-        <h2 for="board_img">Add an Image</h2>
+        <h2>Add an Image</h2>
         <div class="previewer">
-          <img id="img-preview hidden">
+          <img class="img-preview hidden">
           <i class="fa-regular fa-image"></i>
           <label for="board_img" class="input-btn">Upload Image</label>
         </div>
-        <input type="file" accept="image/png, image/jped" name="file-img" id="board_img">
+        <input type="file" accept="image/png, image/jpeg" name="file-img" id="board_img">
       </div>
       <input type="submit" value="Write to Board">
     </form>

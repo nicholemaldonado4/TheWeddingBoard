@@ -129,6 +129,13 @@ input[type="submit"]:hover {
   background-color: var(--light-aqua);
 }
 
+.img-preview {
+	width: min(300px, 75%);
+	aspect-ratio: 1 / 1;
+	object-fit: cover;
+	border-radius: 5px;
+}
+
 @media all and (max-width: 900px) {
 
 }
