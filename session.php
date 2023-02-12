@@ -56,6 +56,13 @@ class BoardWriterSession extends Session {
     $_SESSION['board_pin'] = $id;
   }
   
+  function getBoardPin() {
+    if ($this->isLoggedIn()) {
+      return $_SESSION['board_pin'];
+    }
+    return '';
+  }
+  
   function destroy() {
     if ($this->isLoggedIn()) {
       unset($_SESSION["board_pin"]);

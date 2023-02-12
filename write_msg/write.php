@@ -1,7 +1,10 @@
 <?php 
   include_once("../session.php");
+  include_once("write_form_data.php");
   $session = new BoardWriterSession();
   $session->redirectIfNotLoggedIn(".");
+  $formData = new WriteFormData($session->hasFlashData() ? $session->GetFlashData() : NULL);
+  $session->clearFlashData();
 ?>
 
 <!DOCTYPE html>
@@ -29,10 +32,17 @@
     </ul>
   </nav>
   <section class="msg-sect">
-    <form>
+    <?php
+    if ($formData->hasError()) {
+      $type = $formData->wasUploaded() ? "success" : "error";
+      $initial = $formData->wasUploaded() ? "" : "* ";
+      echo "<p class='$type'>".$initial.$formData->getError()."</p>";
+    }     
+    ?>
+    <form method="post" action="add_to_board.php" enctype="multipart/form-data">
       <div class="msg-div">
         <h2 for="board_msg">Write a Message</h2>
-        <textarea name="board_msg"></textarea>
+        <textarea name="board_msg"><?=$formData->getBoardMsg()?></textarea>
         <p class="light-font">Char Left: <span id='char-left'>200</span></p>
       </div>
       <div>
@@ -42,7 +52,7 @@
           <i class="fa-regular fa-image"></i>
           <label for="board_img" class="input-btn">Upload Image</label>
         </div>
-        <input type="file" accept="image/png, image/jpeg" name="file-img" id="board_img">
+        <input type="file" accept="image/png, image/jpeg" name="file_img" id="board_img">
       </div>
       <input type="submit" value="Write to Board">
     </form>
