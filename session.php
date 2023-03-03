@@ -70,6 +70,30 @@ class BoardWriterSession extends Session {
   }
 }
 
+class BoardViewerSession extends Session {
+  function isLoggedIn() {
+    return array_key_exists("viewer_board_pin", $_SESSION) &&
+        !empty($_SESSION['viewer_board_pin']);
+  }
+  
+  function markLogIn($id) {
+    $_SESSION['viewer_board_pin'] = $id;
+  }
+  
+  function getBoardPin() {
+    if ($this->isLoggedIn()) {
+      return $_SESSION['viewer_board_pin'];
+    }
+    return '';
+  }
+  
+  function destroy() {
+    if ($this->isLoggedIn()) {
+      unset($_SESSION["viewer_board_pin"]);
+    }
+  }
+}
+
 class BoardMakerSession extends Session {
   function isLoggedIn() {
     return array_key_exists("username", $_SESSION) &&

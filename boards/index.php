@@ -1,8 +1,8 @@
 <?php 
   include_once("../session.php");
   include_once("../php/board_login.php");
-  $session = new BoardWriterSession();
-//  $session->redirectIfLoggedIn("write.php");
+  $session = new BoardViewerSession();
+  $session->redirectIfLoggedIn("viewer.php");
   $boardLoginData = new BoardLoginData($session->hasFlashData() ? $session->GetFlashData() : NULL);
   $session->clearFlashData();
 ?>
