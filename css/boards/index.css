@@ -5,6 +5,9 @@
   --light-teal: #53cfbe;
   --dark-teal: #338f82;
   
+  --light-aqua: #67d7db;
+  --med-aqua: #5fc8cc;
+  
   --ff-title: "Lobster Two", serif;
   --ff-body: "Assistant", "sans-serif";
 }
@@ -27,5 +30,5 @@ p {
 }
 
 .link {
-  color: var(--light-teal);
+  color: var(--light-aqua);
 }

@@ -5,6 +5,9 @@
   --light-teal: #53cfbe;
   --dark-teal: #338f82;
   
+  --light-aqua: #67d7db;
+  --med-aqua: #5fc8cc;
+  
   --ff-title: "Lobster Two", serif;
   --ff-body: "Assistant", "sans-serif";
 }
@@ -73,13 +76,13 @@ input[type="submit"] {
   width: 100%;
   margin-top: 1rem;
   padding: 0.5rem 0px;
-  background-color: var(--light-teal);
+  background-color: var(--light-aqua);
   color: white;
   font-weight: 700;
 }
 
 input[type="submit"]:hover {
-  background-color: var(--med-teal);
+  background-color: var(--med-aqua);
 }
 
 .title-banner {
