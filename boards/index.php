@@ -2,7 +2,7 @@
   include_once("../session.php");
   include_once("../php/board_login.php");
   $session = new BoardViewerSession();
-  $session->redirectIfLoggedIn("viewer.php");
+  $session->redirectIfLoggedIn("view.php");
   $boardLoginData = new BoardLoginData($session->hasFlashData() ? $session->GetFlashData() : NULL);
   $session->clearFlashData();
 ?>
