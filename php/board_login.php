@@ -1,9 +1,8 @@
 <?php
 include_once("../form_data.php");
 include_once("../database.php");
-include_once("../session.php");
 
-function verify_board_login($success_redirect_addr, $err_redirect_addr) {
+function verify_board_login($session, $success_redirect_addr, $err_redirect_addr) {
   if ($_SERVER["REQUEST_METHOD"] !== "POST") {
     header("Location: ../");
     exit();
@@ -11,7 +10,6 @@ function verify_board_login($success_redirect_addr, $err_redirect_addr) {
   $boardPin = array_key_exists("board_pin", $_POST) ? $_POST["board_pin"] : "";
   $boardPassword = array_key_exists("board_password", $_POST) ? $_POST["board_password"] : "";
   
-  $session = new BoardWriterSession();
   $db = new Database();
   $err  = $db->connect();
   if (!empty($err)) {

@@ -1,7 +1,9 @@
 <?php
 
+include_once("../session.php");
 include_once("../php/board_login.php");
 
-verify_board_login("/boards/view.php", "/boards/index.php");
+#TODO convert to BoardViewerSession
+verify_board_login(new BoardWriterSession(), "/boards/view.php", "/boards/index.php");
 
 ?>
