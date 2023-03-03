@@ -1,6 +1,7 @@
 <?php 
   include_once("../session.php");
   include_once("write_form_data.php");
+  define('_HEADER_ACCESS', 1);
   $session = new BoardWriterSession();
   $session->redirectIfNotLoggedIn(".");
   $formData = new WriteFormData($session->hasFlashData() ? $session->GetFlashData() : NULL);
@@ -21,16 +22,7 @@
   
 </head>
 <body>
-  <nav>
-    <ul class="left-nav">
-      <h1 class="logo-name">Wedding Board</h1>
-    </ul>
-    
-    <img class="toggle" src="../imgs/menu_bars.svg" alt="Drop Down Menu Bars">
-    <ul class="right-nav">
-      <li><a href="logout.php">Log Out</a></li>
-    </ul>
-  </nav>
+  <?php require_once '../php/logout_header.php';?>
   <section class="msg-sect">
     <?php
     if ($formData->hasError()) {
