@@ -2,7 +2,7 @@
   include_once("../session.php");
   include_once("../php/board_login.php");
   $session = new BoardWriterSession();
-  $session->redirectIfLoggedIn("write.php");
+//  $session->redirectIfLoggedIn("write.php");
   $boardLoginData = new BoardLoginData($session->hasFlashData() ? $session->GetFlashData() : NULL);
   $session->clearFlashData();
 ?>
@@ -13,12 +13,12 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Wedding Board | Write Message</title>
+  <title>Wedding Board | Boards</title>
   
   <link rel="stylesheet"
           href="https://fonts.googleapis.com/css?family=Lobster Two|Assistant">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
-  <link rel="stylesheet" href="../css/write_msg/index.css">
+  <link rel="stylesheet" href="../css/boards/index.css">
   <link rel="stylesheet" href="../css/login/form.css">
 </head>
 <body>
@@ -40,7 +40,7 @@
           echo "<p class='err_msg'>".$boardLoginData->getError()."</p>";
         }
       ?>
-      <input type="submit" value="Write a Message">
+      <input type="submit" value="View Board">
     </form>
   </div>
   <section class="info-sect">
