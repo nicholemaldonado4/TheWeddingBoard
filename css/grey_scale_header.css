@@ -1,5 +1,6 @@
 :root {
   --charcoal: #454647;
+  --med-charcoal: #535557;
   --light-grey: #d1d4d9;
   --med-teal: #40aa9c;
   --light-teal: #53cfbe;
@@ -28,6 +29,6 @@ nav {
   }
   
   .right-nav li:hover {
-    background-color: grey;
+    background-color: var(--med-charcoal);
   }
 }
