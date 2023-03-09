@@ -8,8 +8,9 @@
   --light-aqua: #67d7db;
   --med-aqua: #5fc8cc;
   
-  --ff-title: "Lobster Two", serif;
+  --ff-title: "Lobster Two", "serif";
   --ff-body: "Assistant", "sans-serif";
+  --ff-banner: "Dancing Script", "serif";
 }
 
 body {
@@ -24,16 +25,26 @@ body {
 .banner {
   width: 100%;
   background-color: white;
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+  text-align: center; 
+  margin-top: 5px;
+}
+
+.banner h1 {
+  font-size: 4rem;
+  font-family: var(--ff-banner);
+  font-weight: bold;
 }
 
 .gallery {
   width: 75vw;
+  margin-top: 3rem;
   margin-left: auto;
   margin-right: auto;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-gap: 28px;
-  border-style: solid;
   justify-content: center;
 }
 
@@ -58,13 +69,26 @@ body {
   display: none;
   align-items: center;
   justify-content: center;
+  color: white;
 }
 
 .post:hover .post-overlay{
   display: flex;
 }
 
+.post-msg {
+  font-size: 1.1rem;
+  font-family: var(--ff-body);
+  font-weight: bold;
+}
+
 @media all and (max-width: 800px) {
+  .banner h1 {
+    font-size: 3rem;
+    font-family: var(--ff-banner);
+    font-weight: bold;
+  }
+  
   .post-img img {
     height: calc((100 - 4) / 3)vw;
   }

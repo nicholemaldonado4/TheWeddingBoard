@@ -13,7 +13,7 @@
   <title>Wedding Board | View</title>
   
   <link rel="stylesheet"
-          href="https://fonts.googleapis.com/css?family=Lobster Two|Assistant">
+          href="https://fonts.googleapis.com/css?family=Lobster Two|Assistant|Dancing Script">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
   <link href="/css/boards/dynamic_view.php" type='text/css' rel="stylesheet">
   <link href="/css/header.css" rel="stylesheet">

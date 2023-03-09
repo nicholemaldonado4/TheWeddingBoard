@@ -36,6 +36,12 @@
       echo "font: ".$this->font_color."<br>";
       echo "honeycomb: ".$this->is_honeycomb_shape."<br>";
     }
+    function get_rgb_foreground() {
+      $r = hexdec(substr($this->foreground_color,0,2));
+      $g = hexdec(substr($this->foreground_color,2,2));
+      $b = hexdec(substr($this->foreground_color,4,2));
+      return array($r, $g, $b);
+    }
   }
   
   function get_board_settings() {
@@ -84,11 +90,14 @@
 }
 
 body {
-  background-color: <?=$board_settings->get_background_color();?>;
+  background-color: <?=$board_settings->get_background_color();?>
 }
 
 .post-overlay {
-  background-color: <?=$board_settings->get_foreground_color();?>;
+  background-color: <?php
+    list($r, $g, $b) = $board_settings->get_rgb_foreground();
+    echo "rgba($r, $g, $b, 0.8)";
+  ?>;
 }
 
 .post-msg {

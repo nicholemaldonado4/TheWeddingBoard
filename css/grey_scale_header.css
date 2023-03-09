@@ -14,8 +14,7 @@
 }
 
 nav {
-  border-bottom-color: var(--charcoal);
-  border-bottom-width:4px;
+  border-bottom-style: none;
 }
 
 .right-nav a:hover {
@@ -25,7 +24,7 @@ nav {
 @media all and (max-width: 900px) {
   .right-nav {
     background-color: var(--charcoal);
-    top: calc(24px + 1.6rem);
+    top: calc(20px + 1.6rem);
   }
   
   .right-nav li:hover {
