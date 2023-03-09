@@ -13,7 +13,7 @@
   <title>Wedding Board | View</title>
   
   <link rel="stylesheet"
-          href="https://fonts.googleapis.com/css?family=Lobster Two|Assistant|Dancing Script">
+          href="https://fonts.googleapis.com/css?family=Lobster Two|Assistant">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
   <link href="/css/boards/dynamic_view.php" type='text/css' rel="stylesheet">
   <link href="/css/header.css" rel="stylesheet">
@@ -23,16 +23,31 @@
 </head>
 <body>
   <?php require_once '../php/logout_header.php';?>
-  <?php
-    #TODO: Create closable banner displaying err.
-    if ($session->hasFlashData()) {
-      $session->clearFlashData();
-    }
-    $board_features = get_board_features($session->getBoardPin());
-    #TODO: Create closable banner displaying unable to show board features if
-    # board_features === FALSE.
-  ?>
   <section class="banner">
+    <?php
+      $alert_msgs = array();
+      if ($session->hasFlashData()) {
+        $alert_msgs[] = $session->getFlashData()->getMsg();
+        $session->clearFlashData();
+      }
+      $board_features = get_board_features($session->getBoardPin());
+      if ($board_features === FALSE) {
+        $alert_msgs[] = "Unable to get board messages. Please try again.";
+      }
+      $alert_msgs[] = "heyyyyy!!!";
+      $alert_msgs[] = "thats so cool!!!";
+      if (!empty($alert_msgs)) {
+    ?>
+      <div class="alerts">
+        <?php foreach ($alert_msgs as $msg) {?>
+          <div class="alert-item">
+            <p><?=$msg?></p>
+            <span class="closebtn">&times;</span> 
+          </div>
+        <?php } ?>
+      </div>
+    <?php } ?>
+    
     <h1><?=$board_features === FALSE ? "" : $board_features->get_title()?></h1>
   </section>
   <section class="gallery">
