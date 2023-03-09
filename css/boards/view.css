@@ -66,15 +66,24 @@ body {
   right: 0;
   bottom: 0;
   top: 0;
-  display: none;
   align-items: center;
   justify-content: center;
   color: white;
 }
 
+.post:nth-child(2n) .post-overlay {
+  display: none;
+}
+
+.post:nth-child(2n+1) .post-overlay {
+  display: flex;
+}
+
+/*
 .post:hover .post-overlay{
   display: flex;
 }
+*/
 
 .post-msg {
   font-size: 1.1rem;
