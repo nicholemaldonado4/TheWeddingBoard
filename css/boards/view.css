@@ -1,0 +1,76 @@
+:root {
+  --charcoal: #454647;
+  --light-grey: #d1d4d9;
+  --med-teal: #40aa9c;
+  --light-teal: #53cfbe;
+  --dark-teal: #338f82;
+  
+  --light-aqua: #67d7db;
+  --med-aqua: #5fc8cc;
+  
+  --ff-title: "Lobster Two", serif;
+  --ff-body: "Assistant", "sans-serif";
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.banner {
+  width: 100%;
+  background-color: white;
+}
+
+.gallery {
+  width: 75vw;
+  margin-left: auto;
+  margin-right: auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 28px;
+  border-style: solid;
+  justify-content: center;
+}
+
+.post {
+  position: relative;
+}
+
+
+.post-img img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  display: block;
+}
+
+.post-overlay {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 0;
+  display: none;
+  align-items: center;
+  justify-content: center;
+}
+
+.post:hover .post-overlay{
+  display: flex;
+}
+
+@media all and (max-width: 800px) {
+  .post-img img {
+    height: calc((100 - 4) / 3)vw;
+  }
+  
+  .gallery {
+    width: 100%;
+    grid-gap: 2px;
+  }
+}

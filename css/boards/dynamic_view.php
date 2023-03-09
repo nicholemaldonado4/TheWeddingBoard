@@ -84,11 +84,13 @@
 }
 
 body {
-  margin: 0;
-  padding: 0;
-  background-color: <?=$board_settings->get_background_color();?>
+  background-color: <?=$board_settings->get_background_color();?>;
 }
 
-* {
-  box-sizing: border-box;
+.post-overlay {
+  background-color: <?=$board_settings->get_foreground_color();?>;
+}
+
+.post-msg {
+  color: <?=$board_settings->get_font_color();?>;
 }
