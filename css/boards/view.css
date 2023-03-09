@@ -68,16 +68,48 @@ body {
   top: 0;
   align-items: center;
   justify-content: center;
-  color: white;
+  display: flex;
+}
+
+
+@keyframes fadeIn {
+  0%,30% {
+    opacity: 0;
+  }
+  70%, 100% {
+    visibility: visible;
+    opacity: 1;
+  }
+}
+
+@keyframes fadeOut {
+  0%,30% {
+    visibility: visible;
+    opacity: 1;
+  }
+  70%, 100% {
+    opacity: 0;
+  }
+}
+
+.post-overlay {
+  animation-iteration-count: infinite;
+  animation-duration: 6s;
+  animation-direction: alternate;
 }
 
 .post:nth-child(2n) .post-overlay {
-  display: none;
+  visibility: hidden;
+  animation-name: fadeIn;
+  
 }
 
 .post:nth-child(2n+1) .post-overlay {
-  display: flex;
+  visibility: visible;
+  animation-name: fadeOut;
 }
+
+
 
 /*
 .post:hover .post-overlay{
