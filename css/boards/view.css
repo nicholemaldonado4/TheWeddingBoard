@@ -10,7 +10,6 @@
   
   --ff-title: "Lobster Two", "serif";
   --ff-body: "Assistant", "sans-serif";
-  --ff-banner: "Dancing Script", "serif";
 }
 
 body {
@@ -32,8 +31,8 @@ body {
 }
 
 .banner h1 {
-  font-size: 4rem;
-  font-family: var(--ff-banner);
+  font-size: 3rem;
+  font-family: var(--ff-title);
   font-weight: bold;
 }
 
@@ -124,12 +123,6 @@ body {
 }
 
 @media all and (max-width: 800px) {
-  .banner h1 {
-    font-size: 3rem;
-    font-family: var(--ff-banner);
-    font-weight: bold;
-  }
-  
   .post-img img {
     height: calc((100 - 4) / 3)vw;
   }
