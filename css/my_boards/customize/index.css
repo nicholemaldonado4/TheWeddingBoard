@@ -1,0 +1,34 @@
+:root {
+  --charcoal: #454647;
+
+  --med-teal: #40aa9c;
+  --light-teal: #53cfbe;
+  --dark-teal: #338f82;
+  --faded-teal: #86c4c1;
+  
+  --light-aqua: #67d7db;
+  --med-aqua: #5fc8cc;
+  --deep-aqua: #12c6c1;
+  --dark-aqua: #015d67;
+  
+  --light-grey: #ebebeb;
+  
+  
+  --ff-title: "Lobster Two", serif;
+  --ff-body: "Assistant", "sans-serif";
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: var(--light-grey);
+}
+
+
+@media all and (max-width: 700px) {
+	
+}
