@@ -37,7 +37,7 @@
     }
   }
 
-  function get_board_settings() {
+  function load_board_settings() {
     $session = new BoardViewerSession();
     $db = new Database();
     $err  = $db->connect();
