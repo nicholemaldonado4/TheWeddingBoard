@@ -5,7 +5,7 @@
   include_once("../../php/board_settings.php");
 
   $board_settings = get_board_settings();
-  
+
 ?>
 
 :root {

@@ -27,6 +27,7 @@
     <?php
       $alert_msgs = array();
       if ($session->hasFlashData()) {
+        
         $alert_msgs[] = $session->getFlashData()->getMsg();
         $session->clearFlashData();
       }
@@ -34,8 +35,7 @@
       if ($board_features === FALSE) {
         $alert_msgs[] = "Unable to get board messages. Please try again.";
       }
-      $alert_msgs[] = "heyyyyy!!!";
-      $alert_msgs[] = "thats so cool!!!";
+
       if (!empty($alert_msgs)) {
     ?>
       <div class="alerts">
@@ -71,4 +71,5 @@
   </section>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
   <script src="/js/header.js"></script>
+  <script src="/js/boards/view.js"></script>
 </body>
