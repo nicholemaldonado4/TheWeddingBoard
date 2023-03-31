@@ -4,7 +4,9 @@
 
   include_once("../../php/board_settings.php");
 
-  $board_settings = load_board_settings();
+  $session = new BoardViewerSession();
+  $board_pin = $session->getBoardPin();
+  $board_settings = load_board_settings($session, $board_pin);
 
 ?>
 

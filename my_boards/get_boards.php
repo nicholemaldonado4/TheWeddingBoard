@@ -29,7 +29,7 @@ function get_boards($session) {
     echo "<td scope='row' data-label='Password'>$password</td>";
     echo "<td scope='row' data-label='Actions'>";
     echo "<div>";
-    echo "<form action='customize' method='post'>".
+    echo "<form action='customize/index.php' method='post'>".
       "<button type='submit' name='pin' value=$pin>Edit</button>".
       "</form> $spacing ";
     echo "<form action='delete.php' method='post'>".

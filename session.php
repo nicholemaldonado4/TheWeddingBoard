@@ -104,6 +104,11 @@ class BoardMakerSession extends Session {
         !empty($_SESSION['username']);
   }
   
+  function hasEditingBoardPin() {
+    return array_key_exists("board_maker_edit_pin", $_SESSION) &&
+      !empty($_SESSION['board_maker_edit_pin']);
+  }
+  
   function getUsername() {
     if ($this->isLoggedIn()) {
       return $_SESSION["username"];
@@ -111,13 +116,27 @@ class BoardMakerSession extends Session {
     return "";
   }
   
+  function getEditingBoardPin() {
+    if ($this->isLoggedIn()) {
+      return $_SESSION["board_maker_edit_pin"];
+    }
+    return "";
+  }
+  
+  function markEditingBoardPin($pin) {
+    $_SESSION["board_maker_edit_pin"] = $pin;
+  }
+  
   function markLogIn($id) {
     $_SESSION['username'] = $id;
   }
   
   function destroy() {
-    if ($this->isLoggedIn()) {
+    if (array_key_exists("username", $_SESSION)) {
       unset($_SESSION["username"]);
+    }
+    if (array_key_exists("board_maker_edit_pin", $_SESSION)) {
+      unset($_SESSION["board_maker_edit_pin"]);
     }
   }
 }

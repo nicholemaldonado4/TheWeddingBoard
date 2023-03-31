@@ -35,7 +35,7 @@ body {
   height: calc(100vh - (32px + 1.6rem));
 }
 
-.board-settings-sect {
+.board-settings-sect form {
   height: 100%;
   width: 300px;
   display: flex;
@@ -43,6 +43,36 @@ body {
   justify-content: stretch;
   background-color: var(--charcoal);
   padding: 1rem;
+  justify-content: space-between;
+}
+
+.board-settings-sect label {
+  display: block;
+  font-size: 1rem;
+  font-family: var(--ff-body);
+  margin-bottom: 0.5rem;
+  color: white;
+}
+
+input[type="text"],
+input[type="color"] {
+  
+  margin-bottom: 1rem;
+}
+
+input[type="text"] {
+  font-size:1rem;
+  font-family: var(--ff-body);
+  border-radius: 5px;
+  border-color: var(--light-grey);
+  border-width: thin;
+  border-style: solid;
+  width: 100%;
+  padding: 5px;
+}
+
+input[type="color"] {
+  height: 2rem;
 }
 
 .board-view {
@@ -59,7 +89,22 @@ body {
   display: block;
 }
 
+.submit_btn {
+  font-size: 1rem;
+  font-family: var(--ff-body);
+  border-radius: 10px;
+  border-style: none;
+  width: 100%;
+  margin-top: 1rem;
+  padding: 0.5rem 0px;
+  background-color: var(--med-aqua);
+  color: white;
+  font-weight: 700;
+}
 
+.submit_btn:hover {
+  background-color: var(--light-aqua);
+}
 
 @media all and (max-width: 700px) {
 	

@@ -7,11 +7,16 @@
     private $background_color;
     private $foreground_color;
     private $font_color;
+    private $banner_title;
     
-    function __construct($background_color = "#ffffff", $foreground_color = "#5fc8cc", $font_color = "#ffffff") {
+    function __construct($background_color = "#ffffff", 
+                         $foreground_color = "#5fc8cc", 
+                         $font_color = "#ffffff",
+                         $banner_title = "Congratulations") {
       $this->background_color = $background_color;
       $this->foreground_color = $foreground_color;
       $this->font_color = $font_color;
+      $this->banner_title = $banner_title;
     }
     
     function get_background_color() {
@@ -23,11 +28,15 @@
     function get_font_color() {
       return $this->font_color;
     }
+    function get_banner_title() {
+      return $this->banner_title;
+    }
 
     function print() {
       echo "back: ".$this->background_color."<br>";
       echo "fore: ".$this->foreground_color."<br>";
       echo "font: ".$this->font_color."<br>";
+      echo "title: ".$this->banner_title."<br>";
     }
     function get_rgb_foreground() {
       $r = hexdec(substr($this->foreground_color,0,2));
@@ -37,8 +46,7 @@
     }
   }
 
-  function load_board_settings() {
-    $session = new BoardViewerSession();
+  function load_board_settings($session, $board_pin) {
     $db = new Database();
     $err  = $db->connect();
     if (!empty($err)) {
@@ -47,7 +55,7 @@
     }
 
     $stmt = $db->getCon()->prepare("SELECT * FROM WEDDING_BOARD WHERE WPin=?");
-    $board_pin = $session->getBoardPin();
+
     $stmt->bind_param('s', $board_pin);
     if ($stmt->execute() == FALSE) {
       $session->setFlashData(new FlashData("Unable to load board settings. Please try to reload the page"));
@@ -59,7 +67,8 @@
       $row = $resultBoard->fetch_assoc();
       return new BoardSettings("#".$row['WBackgroundColor'],
                               "#".$row['WForegroundColor'],
-                              "#".$row['WFontColor']);
+                              "#".$row['WFontColor'],
+                              $row['WBannerTitle']);
     }
     $session->setFlashData(new FlashData("Unable to load board settings. Please try to reload the page"));
     return new BoardSettings();
