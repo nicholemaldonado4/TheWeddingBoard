@@ -46,6 +46,7 @@ abstract class Session {
   }
 }
 
+# Session to write to board
 class BoardWriterSession extends Session {
   function isLoggedIn() {
     return array_key_exists("writer_board_pin", $_SESSION) &&
@@ -70,6 +71,7 @@ class BoardWriterSession extends Session {
   }
 }
 
+# Session to view someone's board.
 class BoardViewerSession extends Session {
   function isLoggedIn() {
     return array_key_exists("viewer_board_pin", $_SESSION) &&
@@ -94,6 +96,8 @@ class BoardViewerSession extends Session {
   }
 }
 
+# Session for logging in to see all your boards and edit/create
+# new boards.
 class BoardMakerSession extends Session {
   function isLoggedIn() {
     return array_key_exists("username", $_SESSION) &&

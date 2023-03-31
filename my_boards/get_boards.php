@@ -27,8 +27,15 @@ function get_boards($session) {
     echo "<td scope='row' data-label='Board'>$title</td>";
     echo "<td scope='row' data-label='Pin'>$pin</td>";
     echo "<td scope='row' data-label='Password'>$password</td>";
-    echo "<td scope='row' data-label='Actions'><div><a href=customize?op=edit&board=$title>Edit</a>".
-      " $spacing <a href=delete.php?board=$title>Delete</a></div></td>";
+    echo "<td scope='row' data-label='Actions'>";
+    echo "<div>";
+    echo "<form action='customize' method='post'>".
+      "<button type='submit' name='pin' value=$pin>Edit</button>".
+      "</form> $spacing ";
+    echo "<form action='delete.php' method='post'>".
+      "<button type='submit' name='pin' value=$pin>Delete</button>".
+      "</form>";
+    echo "</div>";
     echo "</tr>";
   }        
 }

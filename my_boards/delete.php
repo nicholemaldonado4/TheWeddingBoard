@@ -3,25 +3,21 @@
 
 include_once("../database.php");
 include_once("../session.php");
-$session = new BoardMakerSession();
-$session->redirectIfNotLoggedIn("../");
 
-function delete_board($session) {
-  if ($_SERVER["REQUEST_METHOD"] !== "GET") {
+function delete_board() {
+  if ($_SERVER["REQUEST_METHOD"] !== "POST") {
     header("Location: ../");
     exit();
   }
   
-  $_GET_lower = array_change_key_case($_GET, CASE_LOWER);
-  
   # If user does not provide board name, ignore request.
-  if (!array_key_exists("board", $_GET)) {
+  if (!array_key_exists("pin", $_POST)) {
     header("Location: index.php");
     exit();
   }
-  
-  $username = $session->getUsername();
-  $board = $_GET["board"];
+  $session = new BoardMakerSession();
+
+  $pin = $_POST["pin"];
   
   $db = new Database();
   $err  = $db->connect();
@@ -31,17 +27,16 @@ function delete_board($session) {
     exit();
   }
   
-  // Delete table
-  $stmt = $db->getCon()->prepare("DELETE FROM WEDDING_BOARD WHERE WUsername=? AND WTitle=?");
-  $stmt->bind_param('ss', $username, $board);
+  // Delete board
+  $stmt = $db->getCon()->prepare("DELETE FROM WEDDING_BOARD WHERE WPin=?");
+  $stmt->bind_param('s', $pin);
   if ($stmt->execute() == FALSE) {
-    $session->setFlashData(new FlashData("Unable to delete board $board."));
-    echo "Unable to execute";
+    $session->setFlashData(new FlashData("Unable to delete board with pin."));
   }
   header("Location: index.php");
   exit();
 }
 
-delete_board($session);
+delete_board();
 
 ?>

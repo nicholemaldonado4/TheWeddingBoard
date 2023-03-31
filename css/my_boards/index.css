@@ -118,13 +118,20 @@ th {
   padding-right: 10px;
 }
 
-td a {
-  text-decoration: none;
-  color: var(--med-teal);
-  font-weight: 600;
+td form {
+  display: inline;
 }
 
-td a:hover {
+td button {
+  text-decoration: none;
+  color: var(--med-teal);
+  font-weight: 400;
+  font-size: 1.1rem;
+  border-style: none;
+  background-color: white;
+}
+
+td button:hover {
   color: var(--dark-teal);
 }
 
