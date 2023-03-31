@@ -1,6 +1,6 @@
 <?php 
-  include_once("../session.php");
-  include_once("../database.php");
+  include_once(dirname(__FILE__)."/../session.php");
+  include_once(dirname(__FILE__)."/../database.php");
 
   class Post {
     private $msg;
@@ -57,7 +57,7 @@
     return false;
   }
 
-  function get_board_posts($board_features, $db, $board_pin) {
+  function get_board_posts($board_features, $db, $board_pin, $relative_dir) {
     $stmt = $db->getCon()->prepare("SELECT PFilePath, PCaption FROM PICTURE WHERE PPin=?");
     $stmt->bind_param('s', $board_pin);
     if ($stmt->execute() == false) {
@@ -66,14 +66,14 @@
     $resultBoard = $stmt->get_result();
     if ($resultBoard !== false) {
       while ($row = $resultBoard->fetch_assoc()) {
-        $board_features->add_post(new Post($row['PCaption'], "../uploaded/".$board_pin."/".$row['PFilePath']));
+        $board_features->add_post(new Post($row['PCaption'], $relative_dir."uploaded/".$board_pin."/".$row['PFilePath']));
       }
       return true;
     }
     return false;
   }
   
-  function get_board_features($board_pin) {
+  function get_board_features($board_pin, $relative_dir="../") {
     $db = new Database();
     if (!empty($db->connect())) {
       return false;
@@ -83,6 +83,6 @@
       return false;
     }
     $board_features = new BoardFeatures($title);
-    return get_board_posts($board_features, $db, $board_pin) ? $board_features : false;
+    return get_board_posts($board_features, $db, $board_pin, $relative_dir) ? $board_features : false;
   }
 ?>

@@ -1,6 +1,8 @@
 <?php 
   include_once("../../session.php");
   include_once("../../php/board_settings.php");
+  include_once("../../boards/board_features.php");
+  include_once("../../php/gallery.php");
 
   $session = new BoardMakerSession();
   $session->redirectIfNotLoggedIn("../../");
@@ -60,7 +62,15 @@
       </form>
     </div>
     <div class="board-view">
-      
+      <?php $board_features = get_board_features($session->getEditingBoardPin(), "../../"); ?>
+      <h1><?=$board_features === FALSE ? "" : $board_features->get_title()?></h1>
+      <div class="gallery">
+      <?php
+        if ($board_features !== FALSE) {
+          show_gallery($board_features);
+        }
+      ?>
+      </div>
     </div>
   </section>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
