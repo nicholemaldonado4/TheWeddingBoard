@@ -53,7 +53,11 @@
     <h1><?=$board_features === FALSE ? "" : $board_features->get_title()?></h1>
   </section>
   <section class="gallery">
-    <?php show_gallery($board_features);?>
+    <?php 
+      if ($board_features !== FALSE) {
+        show_gallery($board_features);
+      }
+    ?>
   </section>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
   <script src="/js/header.js"></script>
