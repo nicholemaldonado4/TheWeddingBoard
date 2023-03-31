@@ -1,7 +1,9 @@
 <?php 
   include_once("../session.php");
   include_once("board_features.php");
+  include_once("../php/gallery.php");
   define('_HEADER_ACCESS', 1);
+
   $session = new BoardViewerSession();
   $session->redirectIfNotLoggedIn(".");
 ?>
@@ -51,23 +53,7 @@
     <h1><?=$board_features === FALSE ? "" : $board_features->get_title()?></h1>
   </section>
   <section class="gallery">
-    <?php
-      if ($board_features !== FALSE) {
-        $posts = $board_features->get_posts();
-        foreach ($posts as $post) {
-      ?>
-      <div class="post">
-          <figure class="post-img">
-            <img src="<?=$post->get_filepath()?>">
-          </figure>
-          <span class="post-overlay">
-            <p class="post-msg"><?=$post->get_msg()?></p>  
-          </span>
-      </div>
-      <?php
-        }
-      }
-    ?>
+    <?php show_gallery($board_features);?>
   </section>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
   <script src="/js/header.js"></script>
