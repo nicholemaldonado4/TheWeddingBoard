@@ -35,6 +35,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
   <link rel="stylesheet" href="../../css/header.css">
   <link rel="stylesheet" href="../../css/my_boards/customize/index.css">
+  <link rel="stylesheet" href="../../css/boards/gallery.css">
 </head>
 <body>
   <?php 
@@ -62,10 +63,12 @@
       </form>
     </div>
     <div class="board-view">
-      <?php $board_features = get_board_features($session->getEditingBoardPin(), "../../"); ?>
-      <h1><?=$board_features === FALSE ? "" : $board_features->get_title()?></h1>
+      <div class="banner">
+        <h1><?=$board_settings->get_banner_title()?></h1>
+      </div>
       <div class="gallery">
       <?php
+        $board_features = get_board_features($session->getEditingBoardPin(), "../../");
         if ($board_features !== FALSE) {
           show_gallery($board_features);
         }

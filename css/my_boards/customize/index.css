@@ -77,10 +77,14 @@ input[type="color"] {
 
 .board-view {
   height: 100%;
+  width: 100%;
+  overflow-y: scroll;
+/*  overflow-x: hidden;*/
   display: flex;
   flex-direction: column;
+  flex-wrap: nowrap;
   justify-content: flex-start;
-  background-color: green;
+  background-color: var(--light-grey);
 }
 
 .board-settings-sect label,
@@ -104,6 +108,24 @@ input[type="color"] {
 
 .submit_btn:hover {
   background-color: var(--light-aqua);
+}
+
+.banner {
+  width: min(75%, 65vw);
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 100px;
+}
+
+.banner h1 {
+  font-size: 2rem;
+}
+
+.gallery {
+  width: min(75%, 65vw);
+  padding: 2rem 10px;
 }
 
 @media all and (max-width: 700px) {
