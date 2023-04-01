@@ -8,41 +8,39 @@ function SetBackground() {
   gallery.style.backgroundColor = bkgrd_color_picker.value
 }
 
-function SetForeground() {
-  
+function SetForeground(post) {
+  const post_overlay = post.querySelector('.post-overlay');
+  post_overlay.style.backgroundColor = foregrd_color_picker.value;
+}
+
+// TODO: Restart animation otherwise will keep color from previous and be delayed.
+function SetAllForegrounds() {
+  posts.forEach(function (post) {
+    SetForeground(post);
+  });
+}
+
+function SetMsgColor(post) {
+  const post_msg = post.querySelector('.post-msg');
+  post_msg.style.color = msg_font_color_picker.value;
+}
+
+function SetAllMsgsColor() {
+  posts.forEach(function (post) {
+    SetMsgColor(post);
+  });
 }
 
 function InitializePage() {
   SetBackground();
   posts.forEach(function (post) {
-    const post_overlay = post.querySelector('.post-overlay');
-    post_overlay.style.backgroundColor = foregrd_color_picker.value;
-    const post_msg = post.querySelector('.post-msg');
-    post_msg.style.color = msg_font_color_picker.value;
+    SetForeground(post);
+    SetMsgColor(post);
   });
 }
 
-
 InitializePage();
 
-
-//function ShowImage(event) {
-//	if (event.target.files.length <= 0) {
-//        return;
-//    }
-//	var faImg = document.querySelector('.fa-image');
-//    console.log(faImg);
-//    if (!faImg.classList.contains("hidden")) {
-//    	faImg.classList.add("hidden");
-//    }
-//	var imgPreview = document.querySelector(".img-preview");
-//	if (imgPreview.classList.contains("hidden")) {
-//		imgPreview.classList.remove("hidden");
-//	}
-//	
-//	var src = URL.createObjectURL(event.target.files[0]);
-//    imgPreview.src = src;
-//}
-//
-//boardMsg.addEventListener("input", UpdateMsgCharCount, false);
-//boardImg.addEventListener("change", ShowImage, false);
+bkgrd_color_picker.addEventListener("change", (event) => { SetBackground(); });
+foregrd_color_picker.addEventListener("change", (event) => { SetAllForegrounds(); });
+msg_font_color_picker.addEventListener("change", (event) => { SetAllMsgsColor(); });
