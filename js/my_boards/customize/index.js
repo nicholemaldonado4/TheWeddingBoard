@@ -11,6 +11,7 @@ function SetBackground() {
 function SetForeground(post) {
   const post_overlay = post.querySelector('.post-overlay');
   post_overlay.style.backgroundColor = foregrd_color_picker.value;
+  
 }
 
 // TODO: Restart animation otherwise will keep color from previous and be delayed.

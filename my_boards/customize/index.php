@@ -58,8 +58,9 @@
           <label for="foreground_color">Foreground Color</label>
           <input type="color" name="foreground_color" value="<?=$board_settings->get_foreground_color();?>">
         </div>
-  
-        <input class="submit_btn" type="submit" value="Save Board">
+        <div>
+          <input class="submit_btn" type="submit" value="Save Board">
+        </div>
       </form>
     </div>
     <div class="board-view">

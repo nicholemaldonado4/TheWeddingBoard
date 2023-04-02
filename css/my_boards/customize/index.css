@@ -35,14 +35,21 @@ body {
   height: calc(100vh - (32px + 1.6rem));
 }
 
+.board-settings-sect {
+  overflow-y: auto;
+  width: 350px;
+  background-color: var(--charcoal);
+}
+
 .board-settings-sect form {
   height: 100%;
-  width: 300px;
+  width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: stretch;
-  background-color: var(--charcoal);
-  padding: 1rem;
+  padding-top: 1rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
   justify-content: space-between;
 }
 
@@ -102,6 +109,7 @@ input[type="color"] {
   background-color: var(--med-aqua);
   color: white;
   font-weight: 700;
+  margin-bottom: 1rem;
 }
 
 .submit_btn:hover {
