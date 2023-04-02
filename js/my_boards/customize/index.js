@@ -16,6 +16,7 @@ function SetForeground(post) {
 
 // TODO: Restart animation otherwise will keep color from previous and be delayed.
 function SetAllForegrounds() {
+  keyframe_foregrd.style.backgroundColor = 'red';
   posts.forEach(function (post) {
     SetForeground(post);
   });
