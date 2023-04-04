@@ -41,26 +41,26 @@
   <?php 
     require_once '../../php/header.php';
   ?>
+  <section class="customize-header">
+    <a href="../index.php">Back</a>
+    <label class="submit-btn" for="submit_btn" tabindex="0">Submit</label>
+  </section>
   <section class="customize-sect">
     <div class="board-settings-sect">
-      <form class="board-settings" method="post" action="update_board.php">
+      <form method="post" action="update_board.php">
         <?php
           $board_settings = load_board_settings($session, $session->getEditingBoardPin());
         ?>
-        <div>
-          <label for="title">Banner Title</label>
-          <input type="text" name="title" value=<?=$board_settings->get_banner_title();?>>
-          <label for="msg_font_color">Message Font Color</label>
-          <input type="color" name="msg_font_color" value="<?=$board_settings->get_font_color();?>">
+        <label for="title">Banner Title</label>
+        <input type="text" name="title" value=<?=$board_settings->get_banner_title();?>>
+        <label for="msg_font_color">Message Font Color</label>
+        <input type="color" name="msg_font_color" value="<?=$board_settings->get_font_color();?>">
 
-          <label for="background_color">Background Color</label>
-          <input type="color" name="background_color" value="<?=$board_settings->get_background_color();?>">
-          <label for="foreground_color">Foreground Color</label>
-          <input type="color" name="foreground_color" value="<?=$board_settings->get_foreground_color();?>">
-        </div>
-        <div>
-          <input class="submit_btn" type="submit" value="Save Board">
-        </div>
+        <label for="background_color">Background Color</label>
+        <input type="color" name="background_color" value="<?=$board_settings->get_background_color();?>">
+        <label for="foreground_color">Foreground Color</label>
+        <input type="color" name="foreground_color" value="<?=$board_settings->get_foreground_color();?>">
+        <input name="submit_btn" type="submit" class="hidden">
       </form>
     </div>
     <div class="board-view">
