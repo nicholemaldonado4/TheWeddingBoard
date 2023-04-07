@@ -1,10 +1,11 @@
 const gallery = document.querySelector('.gallery');
 
+const title_label = document.querySelector('label[for="title"]');
 const bkgrd_color_label = document.querySelector('label[for="background_color"]');
 const foregrd_color_label = document.querySelector('label[for="foreground_color"]');
 const msg_font_color_label = document.querySelector('label[for="msg_font_color"]');
 
-
+const title_picker = document.querySelector('input[name="title"]');
 const bkgrd_color_picker = document.querySelector('input[name="background_color"]');
 const foregrd_color_picker = document.querySelector('input[name="foreground_color"]');
 const msg_font_color_picker = document.querySelector('input[name="msg_font_color"]');
@@ -56,7 +57,8 @@ function ShowPopUpInput(label, input) {
     input.classList.add("active");
     label.classList.add("selected-label");
     
-    const label_mapping = [[bkgrd_color_label, bkgrd_color_picker],
+    const label_mapping = [[title_label, title_picker],
+                        [bkgrd_color_label, bkgrd_color_picker],
                         [foregrd_color_label, foregrd_color_picker],
                         [msg_font_color_label, msg_font_color_picker]];
     label_mapping.forEach(function (entry) {
@@ -81,7 +83,9 @@ msg_font_color_picker.addEventListener("change", (event) => { SetAllMsgsColor();
 
 var smaller_screen_width = window.matchMedia("(max-width: 800px)");
 if (smaller_screen_width.matches) {
+  title_label.addEventListener("click", (event) => {ShowPopUpInput(title_label, title_picker)});
   bkgrd_color_label.addEventListener("click", (event) => {ShowPopUpInput(bkgrd_color_label, bkgrd_color_picker)});
   foregrd_color_label.addEventListener("click", (event) => {ShowPopUpInput(foregrd_color_label, foregrd_color_picker)});
   msg_font_color_label.addEventListener("click", (event) => {ShowPopUpInput(msg_font_color_label, msg_font_color_picker)});
+  
 }
