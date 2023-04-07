@@ -1,4 +1,10 @@
 const gallery = document.querySelector('.gallery');
+
+const bkgrd_color_label = document.querySelector('label[for="background_color"]');
+const foregrd_color_label = document.querySelector('label[for="foreground_color"]');
+const msg_font_color_label = document.querySelector('label[for="msg_font_color"]');
+
+
 const bkgrd_color_picker = document.querySelector('input[name="background_color"]');
 const foregrd_color_picker = document.querySelector('input[name="foreground_color"]');
 const msg_font_color_picker = document.querySelector('input[name="msg_font_color"]');
@@ -41,8 +47,41 @@ function InitializePage() {
   });
 }
 
+// TODO: Maybe just store prev active label and input.
+function ShowPopUpInput(label, input) {
+  if (input.classList.contains("active")) {
+    input.classList.remove("active");
+    label.classList.remove("selected-label");
+  } else {
+    input.classList.add("active");
+    label.classList.add("selected-label");
+    
+    const label_mapping = [[bkgrd_color_label, bkgrd_color_picker],
+                        [foregrd_color_label, foregrd_color_picker],
+                        [msg_font_color_label, msg_font_color_picker]];
+    label_mapping.forEach(function (entry) {
+      curr_label = entry[0];
+      curr_input = entry[1];
+      if (curr_label == label) {
+        return;
+      }
+      curr_input.classList.remove("active");
+      curr_label.classList.remove("selected-label");
+    });
+
+  }
+}
+
 InitializePage();
+
 
 bkgrd_color_picker.addEventListener("change", (event) => { SetBackground(); });
 foregrd_color_picker.addEventListener("change", (event) => { SetAllForegrounds(); });
 msg_font_color_picker.addEventListener("change", (event) => { SetAllMsgsColor(); });
+
+var smaller_screen_width = window.matchMedia("(max-width: 800px)");
+if (smaller_screen_width.matches) {
+  bkgrd_color_label.addEventListener("click", (event) => {ShowPopUpInput(bkgrd_color_label, bkgrd_color_picker)});
+  foregrd_color_label.addEventListener("click", (event) => {ShowPopUpInput(foregrd_color_label, foregrd_color_picker)});
+  msg_font_color_label.addEventListener("click", (event) => {ShowPopUpInput(msg_font_color_label, msg_font_color_picker)});
+}

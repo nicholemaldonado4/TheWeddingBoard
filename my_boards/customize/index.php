@@ -51,15 +51,16 @@
         <?php
           $board_settings = load_board_settings($session, $session->getEditingBoardPin());
         ?>
+        
         <label for="title">Banner Title</label>
-        <input type="text" name="title" value=<?=$board_settings->get_banner_title();?>>
+        <input class="text-input" type="text" name="title" value=<?=$board_settings->get_banner_title();?>>
         <label for="msg_font_color">Message Font Color</label>
-        <input type="color" name="msg_font_color" value="<?=$board_settings->get_font_color();?>">
+        <input class="color-input" type="color" name="msg_font_color" value="<?=$board_settings->get_font_color();?>">
 
         <label for="background_color">Background Color</label>
-        <input type="color" name="background_color" value="<?=$board_settings->get_background_color();?>">
+        <input class="color-input" type="color" name="background_color" value="<?=$board_settings->get_background_color();?>">
         <label for="foreground_color">Foreground Color</label>
-        <input type="color" name="foreground_color" value="<?=$board_settings->get_foreground_color();?>">
+        <input class="color-input" type="color" name="foreground_color" value="<?=$board_settings->get_foreground_color();?>">
         <input name="submit_btn" type="submit" class="hidden">
       </form>
     </div>

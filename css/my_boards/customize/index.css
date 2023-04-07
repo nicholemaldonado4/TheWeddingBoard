@@ -1,4 +1,5 @@
 :root {
+  --light-charcoal: #5a5b5c;
   --charcoal: #454647;
   --med-charcoal: #313233;
   --dark-charcoal: #222324;
@@ -75,12 +76,12 @@ body {
   color: white;
 }
 
-input[type="text"],
-input[type="color"] {
+.text-input,
+.color-input{
   margin-bottom: 1rem;
 }
 
-input[type="text"] {
+.text-input {
   font-size:1rem;
   font-family: var(--ff-body);
   border-radius: 5px;
@@ -91,7 +92,7 @@ input[type="text"] {
   padding: 5px;
 }
 
-input[type="color"] {
+.color-input {
   height: 2.5rem;
   min-height: 2.5rem;
   max-height: 2.5rem;
@@ -112,8 +113,8 @@ input[type="color"] {
 }
 
 .board-settings-sect label,
-.board-settings-sect input[type='color'],
-.board-settings-sect input[type='text']{
+.color-input,
+.text-input{
   display: block;
 }
 
@@ -178,6 +179,18 @@ input[type="color"] {
 @media all and (max-width: 800px) {
   .customize-sect {
     flex-direction: column-reverse;
+    flex-wrap: nowrap;
+    height: auto;
+    position: relative; /* For abs position of .color-input and .text-input*/
+  }
+  
+  .board-view {
+    /*
+      25px + 1.6rem is nav header
+      16px + 1rem is customize header
+      34px + 1rem is bottom part
+    */
+    height: calc(100vh - (91px + 4.6rem));
   }
   
   .banner {
@@ -185,7 +198,74 @@ input[type="color"] {
     margin: 0px;
   }
   
-  .board-settings-sect form {
-    display: none;
+  .board-settings-sect {
+    height: auto;
+    width: auto;
+    overflow-x: scroll;
+    display: block;
   }
+  
+  .board-settings-sect form {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-auto-rows: 1fr;
+/*    grid-column-gap: 0.5rem;*/
+    padding: 0;
+    margin: 0;
+    margin-left: 10px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+/*    position: relative;*/
+    
+  }
+  
+  .color-input {
+    height: 50px;
+    min-height: 50px;
+    max-height: 50px;
+  }
+  
+  .text-input,
+  .color-input{
+    display: none;
+    width: 100%;
+    padding: 5px 10px;
+    left: 0px;
+    bottom: calc(1rem + 54px);
+    position: absolute; /* relative to parent .customize-sect div */
+    background-color: var(--light-charcoal); 
+    border-bottom-style: solid;
+    border-bottom-color: var(--dark-charcoal);
+    border-bottom-width: 2px;
+    margin: 0px;
+    z-index: 100;
+  }
+  
+  .board-settings-sect label {
+    border-style: solid;
+    border-color: var(--med-charcoal);
+    border-radius: 5px;
+    border-width: 2px;
+    text-align: center;
+    margin: 0px;
+    padding: 5px 5px;
+    margin-right: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    white-space: nowrap;
+  }
+  
+  .board-settings-sect label:hover {
+    background-color: var(--med-charcoal);
+  }
+  
+  .active {
+    display: block;
+  }
+  
+  .selected-label  {
+    background-color: var(--med-charcoal);
+  }
+  
 }
